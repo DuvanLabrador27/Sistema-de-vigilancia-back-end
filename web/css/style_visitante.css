@@ -1,0 +1,96 @@
+.label1{
+
+  font-size: 16px;
+
+  display: block;
+  
+}
+
+.input1{
+
+width: 300px;
+font-size: 14px;
+margin-bottom: 10px;
+
+display: block;
+
+
+}
+.contenedor{
+margin-left: 70px;
+margin-bottom: 60px;
+
+
+}
+h4{
+margin: 10px;
+margin-left: 610px;
+margin-bottom: 20px;
+color: black;
+
+
+}
+
+
+form{
+width: 1000px;
+padding: 16px;
+border-radius: 15px;
+margin:  auto;
+background-color: #ccc;
+}
+
+.contenedor2{
+  margin-left: 70px;
+  margin-bottom: 60px; 
+  }
+
+  
+
+form label{
+width: 72px;
+font-weight: bold;
+display:inline-block;
+}
+
+form textarea[class="textarea"]
+{
+  width: 950px;
+  padding: 3px 20px;
+  border: 1px solid #f6f6f6;
+  border-radius: 3px;
+  background-color: #f6f6f6;
+  margin: 8px 0;
+  display: inline-block;
+  }
+
+form input[class="date"]
+{
+width: 250px;
+padding: 3px 20px;
+border: 1px solid #f6f6f6;
+border-radius: 3px;
+background-color: #f6f6f6;
+margin: 8px 0;
+display: inline-block;
+}
+
+form input[type="text"]
+{
+width: 400px;
+padding: 3px 20px;
+border: 1px solid #f6f6f6;
+border-radius: 5px;
+background-color: #f6f6f6;
+margin: 8px 0;
+display: inline-block;
+}
+
+form input[class="btn"]:hover{
+cursor: pointer;
+} 
+
+.btn{
+background: #09b8e4;
+}
+

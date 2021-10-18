@@ -1,0 +1,41 @@
+
+.w-400px{
+    width: 400px;
+    height: 400px;
+
+}
+.final{
+    justify-content: flex-end!important;
+}
+.h-10{
+    height: 60px !important;
+}
+
+.text-design{
+    text-shadow: 0px 3px 5px blue;
+}
+
+.w-img-cont{
+    width: 500px !important;
+    height: 250px !important;
+}
+
+.blur-z{
+    width: 97%!important;
+    box-shadow: 0px 0px 5px blue;
+    transition: width, box-shadow .5s;
+}
+.img-shadow{
+    box-shadow: -5px 10px 15px purple;
+}
+.blur-z:hover{
+    width: 98%!important;
+    margin-top: -1%;
+    box-shadow: -10px 5px 20px #000000;
+}
+@media screen and (max-width: 980px){
+    .final{
+        justify-content: flex-start !important;
+        margin-left: 1.5rem!important;
+    }
+}

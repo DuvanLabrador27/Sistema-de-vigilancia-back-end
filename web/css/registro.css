@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none; 
+}
+
+body {
+  background-image: url(../imagenes/fondo2.jpg)
+}
+
+/*calor*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+
+input[type=number] {
+-moz-appearance: textfield;
+}
+.form-register {
+  width: 400px;
+ 
+  background: #24303c;
+  padding: 30px;
+  margin: auto;
+  margin-top: 70px;
+  border-radius: 4px;
+  font-family: 'calibri';
+  color: white;
+  box-shadow: 7px 13px 37px #000;
+  text-decoration: none; 
+  
+}
+.form-register2 {
+  width: 400px;
+ 
+  background: #24303c;
+  padding: 30px;
+  margin: 0 auto;
+  margin-top: 150px;
+  border-radius: 4px;
+  font-family: 'calibri';
+  color: white;
+  box-shadow: 7px 13px 37px #000;
+  text-decoration: none; 
+  
+}
+
+.form-register h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+  text-decoration: none; 
+  
+}
+
+.controls {
+  width: 100%;
+  background: #24303c;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #1f53c5;
+  font-family: 'calibri';
+  font-size: 18px;
+  color: white;
+  text-decoration: none; 
+}
+
+
+
+.form-register .botons  {
+  width: 100%;
+  background: #1f53c5;
+  border: none;
+  padding: 12px;
+  color: white;
+  margin: 8px 0;
+  font-size: 16px;
+  display: inline;
+  text-decoration: none; 
+}
+.botons:hover{
+  cursor: pointer;
+  background-color: royalblue;
+  text-decoration: none; 
+ 
+}
+ a{
+  color: white;
+  text-decoration: none; 
+}
+.form-register2 .botons2  {
+  width: 100%;
+  background: #1f53c5;
+  border: none;
+  padding: 12px;
+  color: white;
+  margin: 8px 0;
+  font-size: 16px;
+  display: inline;
+  text-decoration: none; 
+}
+.botons2:hover{
+  cursor: pointer;
+  background-color: royalblue;
+  text-decoration: none; 
+ 
+}
