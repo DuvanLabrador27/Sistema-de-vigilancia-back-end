@@ -17,14 +17,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supervisor Perfil</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style_vilgila.css">
+    <link rel="stylesheet" href="./css/style_vilgila.css">
 
     </head>
     <body>
          <div class="container-fluid">
         <div class="row justify-content-center align-content-center">
             <div class="col-8 barra">
-              <img  class="avatar" src="../imagenes/logoS.png" alt="">
+              <img  class="avatar" src="./imagenes/logoS.png" alt="">
                 <h4 class="text-light">Conjunto La Macarena</h4>
             </div>
             <div class="col-4 text-right barra">
@@ -33,7 +33,7 @@
                         <a href="#" class="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle user"></i></a>
 
                         <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                            <a class="dropdown-item menuperfil cerrar" href="UsuarioSrv?accion=cerrar"><i class="fas fa-sign-out-alt m-1"></i>Salir
+                            <a class="dropdown-item menuperfil cerrar" href="./srvUsuario?accion=cerrar"><i class="fas fa-sign-out-alt m-1"></i>Salir
                             </a>
                         </div>
                     </li>

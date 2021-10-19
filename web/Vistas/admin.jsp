@@ -16,8 +16,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Administrador</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../css/style_vilgila.css">
-        <link rel="stylesheet" href="../css/carrusel.css">
+        <link rel="stylesheet" href="./css/style_vilgila.css">
+        <link rel="stylesheet" href="./css/carrusel.css">
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"
@@ -32,7 +32,7 @@
         <div class="container-fluid">
             <div class="row justify-content-center align-content-center">
                 <div class="col-8 barra">
-                    <img  class="avatar" src="../imagenes/logoS.png" alt="">
+                    <img  class="avatar" src="./imagenes/logoS.png" alt="">
                     <h4 class="text-light">Conjunto La Macarena</h4>
                 </div>
                 <div class="col-4 text-right barra">
@@ -41,7 +41,7 @@
                             <a href="#" class="px-3 text-light perfil dropdown-toggle z-100" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle user"></i></a>
 
                             <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                                <a class="dropdown-item menuperfil cerrar" href="UsuarioSrv?accion=cerrar"><i class="fas fa-sign-out-alt m-1"></i>Salir
+                                <a class="dropdown-item menuperfil cerrar" href="./srvUsuario?accion=cerrar"><i class="fas fa-sign-out-alt m-1"></i>Salir
                                 </a>
                             </div>
                         </li>
@@ -87,17 +87,17 @@
                                                 </div>
                                                 <div class="carousel-inner">
                                                     <div class="carousel-item active" data-bs-interval="1000">
-                                                        <img src="../imagenes/presentacion.jpg" alt="" class="d-block w-400px mx-auto">
+                                                        <img src="./imagenes/presentacion.jpg" alt="" class="d-block w-400px mx-auto">
                                                     </div>
                                                     <div class="carousel-item" data-bs-interval="2000">
-                                                        <img src="../imagenes/presentacion1.jpg" alt="" class="d-block w-400px mx-auto">
+                                                        <img src="./imagenes/presentacion1.jpg" alt="" class="d-block w-400px mx-auto">
                                                     </div>
                                                     <div class="carousel-item">
-                                                        <img src="../imagenes/presentacion2.jpg" alt="" class="d-block w-400px mx-auto">
+                                                        <img src="./imagenes/presentacion2.jpg" alt="" class="d-block w-400px mx-auto">
                                                     </div>
 
                                                     <div class="carousel-item">
-                                                        <img src="../imagenes/fon1.jpg" alt="" class="d-block w-400px mx-auto">
+                                                        <img src="./imagenes/fon1.jpg" alt="" class="d-block w-400px mx-auto">
                                                     </div>
 
                                                 </div>
@@ -139,7 +139,7 @@
         <script src="https://kit.fontawesome.com/646c794df3.js"></script>
         <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-        <script src="../js/mostrarActualizacion.js"></script>
+        <script src="./js/mostrarActualizacion.js"></script>
         <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
