@@ -54,7 +54,7 @@
                         <a href="tabla_visitante.html"><ion-icon name="search"></ion-icon> Consultar minuta de visitante</a>
 
                         <a href="tabla_Administracion.html"><ion-icon name="search"></ion-icon> Consultar minuta de administración</a>
-                        <a href="admin.html">redireccion a administrador</a>
+                        
                     </nav>
                 </div>
                 <main class="main col">
