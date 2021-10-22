@@ -63,7 +63,7 @@
                         <a href="adminVisitante.html"><ion-icon name="search"></ion-icon> Consultar minuta de visitante</a>
 
                         <a href="admin_consulta.html"><ion-icon name="search"></ion-icon> Consultar minuta de administración</a>
-                        <a href="supervisor.html">redireccion a supervisor</a>
+                       
                     </nav>
                 </div>
                 <main class="main col">

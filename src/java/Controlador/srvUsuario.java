@@ -111,6 +111,7 @@ public class srvUsuario extends HttpServlet {
             sesion.setAttribute("supervisor", usuario);
             this.getServletConfig().getServletContext().getRequestDispatcher("/Vistas/supervisor.jsp").forward(request, response); 
         }else{
+            
             request.setAttribute("msje", "Credenciales Incorrectas");
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }

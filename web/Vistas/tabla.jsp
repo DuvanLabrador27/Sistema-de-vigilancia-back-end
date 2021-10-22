@@ -14,12 +14,12 @@
     <title>Tabla-Personal</title>
    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/tabla-personal.css">
+    <link rel="stylesheet" href="./css/tabla-personal.css">
     <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
   />
-  <link rel="stylesheet" href="../css/style_vilgila.css" />
+  <link rel="stylesheet" href="./css/style_vilgila.css" />
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"
@@ -49,26 +49,13 @@
 
                     <tr>
                         <td> ${usuario.nombreUsuario} </td>
-                        <td>{usuario.cargo.nombreCargo}</td>
+                        <td>${usuario.cargo.nombreCargo}</td>
 
                        <td><a href="#"><img src="https://img.icons8.com/material-outlined/24/000000/edit--v1.png"></a></td>
                         <td><a href="#"><img src="https://img.icons8.com/material-outlined/24/000000/delete-forever.png"></a></td>
                         
                     </tr>
-                    <tr>
-                       <td>Sebastian Ovallos</td>
-                       <td>Vigilante</td>
-                   
-                       <td><a href="#"><img src="https://img.icons8.com/material-outlined/24/000000/edit--v1.png"></a></td>
-                        <td><a href="#"><img src="https://img.icons8.com/material-outlined/24/000000/delete-forever.png"></a></td>
-                   </tr>
-                   <tr>
-                       <td>Juan Celis</td>
-                       <td>Vigilante</td>
-                     
-                       <td><a href="#"><img src="https://img.icons8.com/material-outlined/24/000000/edit--v1.png"></a></td>
-                        <td><a href="#"><img src="https://img.icons8.com/material-outlined/24/000000/delete-forever.png"></a></td>
-                   </tr>
+                    <%-- Realizar el ciclo que reocorra la lista y acomodar  --%>
                 </tbody>
               </table>
               
