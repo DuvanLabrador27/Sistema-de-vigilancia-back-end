@@ -23,23 +23,15 @@
             <h1>Conjunto La Macarena</h1>
             <form action="./srvUsuario?accion=verificar" method="POST">
                 
-                <div class="alert alert-warning alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert">
-                        <span aria-hidden="true">×</span>
-                        <span class="sr-only">Close</span>
-                    </button>
-                    Usuario o contraseña invalidos.             
-                </div>
-            
+               
+                
                 <label>Nombre usuario</label>
                 <input type="text" name="txtUsu" id="txt_user" placeholder="Usuario" required>
                 <label>Contraseña</label>
-                <input type="password" name="txtPass" id="txt_pass" placeholder="************" required>
+                <input type="password" name="txtPass" id="txt_pass" placeholder="******" required>
 
 
                 <input type="submit" name="verificar" value="Verificar" class="btn btn-danger btn-block"/>
-
-                <a href="Vistas/registro.jsp">Registrarse</a>
                 <a href="Vistas/recuperarContrasena.jsp">Olvidaste tu contraseña?</a>
 
 

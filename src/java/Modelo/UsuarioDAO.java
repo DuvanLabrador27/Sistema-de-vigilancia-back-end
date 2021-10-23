@@ -5,17 +5,21 @@
  */
 package Modelo;
 
+import Interfaces.CRUD;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author duvan
  */
-public class UsuarioDAO extends conexion {
+public class UsuarioDAO extends conexion implements CRUD {
 
-     public usuario identificar(usuario user) throws Exception{
+    public usuario identificar(usuario user) throws Exception {
         usuario usu = null;
         conexion con;
         Connection cn = null;
@@ -24,13 +28,13 @@ public class UsuarioDAO extends conexion {
         String sql = "SELECT U.IDUSUARIO, C.NOMBRECARGO FROM USUARIO U "
                 + "INNER JOIN CARGO C ON U.IDCARGO = C.IDCARGO "
                 + "WHERE U.ESTADO = 1 AND U.NOMBREUSUARIO = '" + user.getNombreUsuario() + "' "
-                + "AND U.CLAVE = '"+ user.getClave() + "'";
+                + "AND U.CLAVE = '" + user.getClave() + "'";
         con = new conexion();
-        try{
+        try {
             cn = con.conectar();
             st = cn.createStatement();
             rs = st.executeQuery(sql);
-            if(rs.next() == true){
+            if (rs.next() == true) {
                 usu = new usuario();
                 usu.setId_usuario(rs.getInt("IDUSUARIO"));
                 usu.setNombreUsuario(user.getNombreUsuario());
@@ -38,24 +42,89 @@ public class UsuarioDAO extends conexion {
                 usu.getCargo().setNombreCargo(rs.getString("NOMBRECARGO"));
                 usu.setEstado(true);
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Error" + e.getMessage());
-        }finally{
-            if (rs !=null && rs.isClosed() == false){
+        } finally {
+            if (rs != null && rs.isClosed() == false) {
                 rs.close();
             }
             rs = null;
-            if(st!= null && st.isClosed() == false){
+            if (st != null && st.isClosed() == false) {
                 st.close();
-                
+
             }
             st = null;
-            if(cn != null & cn.isClosed() == false){
+            if (cn != null & cn.isClosed() == false) {
                 cn.close();
-                
+
             }
             cn = null;
         }
         return usu;
+    }
+
+    @Override
+    public List listar() {
+        ArrayList<usuario> list = new ArrayList<>();
+        String sql = "select * from usuario";
+        conexion cn = new conexion();
+        Connection con;
+        PreparedStatement ps;
+        ResultSet rs;
+        usuario u = new usuario();
+        try {
+            con = cn.conectar();
+            ps = con.prepareStatement(sql);
+           rs= ps.executeQuery();
+           
+           while(rs.next()){
+           usuario usu = new usuario();
+           usu.setId_usuario(rs.getInt("IDUSUARIO"));
+           usu.setNombreUsuario(rs.getString("NOMBREUSUARIO"));
+           list.add(usu);
+           
+           
+           }
+
+        } catch (Exception e) {
+
+        }
+        return list;
+    }
+
+    @Override
+    public Modelo.usuario list(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean add(Modelo.usuario usu) {
+
+        conexion cn = new conexion();
+        Connection con;
+        PreparedStatement ps;
+        ResultSet rs;
+        usuario u = new usuario();
+        String sql = "insert into usuario(NOMBREUSUARIO)values('" + usu.getNombreUsuario() + "')";
+
+        try {
+            con = cn.conectar();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+
+        }
+        return false;
+    }
+
+    @Override
+    public boolean edit(Modelo.usuario usu) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean eliminar(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

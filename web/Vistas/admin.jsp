@@ -55,8 +55,8 @@
                 <div class="barra-lateral col-12 col-sm-auto ">
                     <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
                         <a href="#" id="admin-tabla"><ion-icon name="contact"></ion-icon> Perfil</a>
-                        <a href="formulario_Personal.html"><ion-icon name="add-circle"></ion-icon> Agregar Persona</a>
-                        <a href="#" id="personal"><ion-icon name="contact"></ion-icon> Consultar personal</a>
+                        <a href="./srvPersonal?accion=add"><ion-icon name="add-circle"></ion-icon> Agregar Personal</a>
+                        <a href="./srvPersonal?accion=listar"><ion-icon name="contact"></ion-icon> Consultar personal</a>
 
                         <a href="adminPuesto.html"><ion-icon name="search"></ion-icon> Consultar minuta de puesto</a>
 

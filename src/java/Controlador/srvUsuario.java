@@ -100,7 +100,7 @@ public class srvUsuario extends HttpServlet {
         if (usuario != null && usuario.getCargo().getNombreCargo().equals("ADMINISTRADOR")) {
             sesion = request.getSession();
             sesion.setAttribute("usuario", usuario);
-            request.setAttribute("msje", "Bienvenido al sistema");
+            
             this.getServletConfig().getServletContext().getRequestDispatcher("/Vistas/admin.jsp").forward(request, response);
         }else if(usuario != null && usuario.getCargo().getNombreCargo().equals("VIGILANTE")){
            sesion = request.getSession();
@@ -111,8 +111,8 @@ public class srvUsuario extends HttpServlet {
             sesion.setAttribute("supervisor", usuario);
             this.getServletConfig().getServletContext().getRequestDispatcher("/Vistas/supervisor.jsp").forward(request, response); 
         }else{
-            
-            request.setAttribute("msje", "Credenciales Incorrectas");
+            String mensaje= "Credenciales Incorrectas";
+            request.setAttribute("msje",mensaje);
             request.getRequestDispatcher("index.jsp").forward(request, response);
             
         }
