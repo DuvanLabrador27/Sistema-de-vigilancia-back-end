@@ -25,6 +25,7 @@ import javax.servlet.http.HttpSession;
 public class srvPersonal extends HttpServlet {
 String listar="Vistas/tabla.jsp";
 String add="Vistas/formulario_personal.jsp";
+String volverAdmin = "Vistas/admin.jsp";
     usuario  usu =new usuario();
    UsuarioDAO u=new UsuarioDAO();
 
@@ -56,6 +57,9 @@ String add="Vistas/formulario_personal.jsp";
          usu.setNombreUsuario(nombre);
          u.add(usu);
          acceso=listar;
+        }else if(action.equalsIgnoreCase("volver")){
+        
+            acceso=volverAdmin;
         }
         RequestDispatcher vista=request.getRequestDispatcher(acceso);
         vista.forward(request, response);

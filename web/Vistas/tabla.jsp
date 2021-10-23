@@ -59,9 +59,10 @@
             <div class="row">
                  <div class="barra-lateral col-12 col-sm-auto ">
                     <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
-                        <a href=""
+                        <a  href="./srvPersonal?accion=volver"
               ><ion-icon name="arrow-round-back"></ion-icon> Volver a
               administrador</a>
+                          
                        
                     </nav>
                 </div>
