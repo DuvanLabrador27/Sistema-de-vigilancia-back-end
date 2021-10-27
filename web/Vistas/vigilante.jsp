@@ -45,7 +45,9 @@
             <div class="row">
                 <div class="barra-lateral col-12 col-sm-auto">
                     <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
-                        <a href="#" id="vigilante"><ion-icon name="contact"></ion-icon> Perfil</a>
+                       
+                        <a href="./srvPerfil?accion=perfil" id="admin-tabla"><ion-icon name="contact"></ion-icon> Perfil</a>
+                      
                         <a href="formulario_Puesto.html"><ion-icon name="add-circle"></ion-icon> Agregar observación de puesto</a>
 
                         <a href="formulario_visitante.html" id="visitante"><ion-icon name="add-circle"></ion-icon> Agregar observación de visitante</a>

@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import Modelo.cargo;
 import Modelo.usuario;
 import java.util.List;
 

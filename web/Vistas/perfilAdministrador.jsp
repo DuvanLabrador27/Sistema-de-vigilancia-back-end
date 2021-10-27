@@ -33,8 +33,8 @@
                     <table  class="table table-hover table-striped table-condensed table-bordered">                        
                         <tbody>
                              <tr>
-                                <th>Administrador</th>
-                                <td>1151808</td>
+                                <th>Cargo</th>
+                                <td>${vigilante.cargo.nombreCargo}</td>
                             </tr>
                              <tr>
                                  <th>Tipo documento</th>
@@ -46,7 +46,7 @@
                              </tr>
                             <tr>
                                 <th>Nombre</th>
-                                <td>Duvan</td>
+                                <td>${supervisor.nombreUsuario}</td>
                             </tr>
                              <tr>
                                  <th>Apellido</th>

@@ -17,6 +17,7 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name = "srvUsuario", urlPatterns = {"/srvUsuario"})
 public class srvUsuario extends HttpServlet {
+    
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
              throws ServletException, IOException {

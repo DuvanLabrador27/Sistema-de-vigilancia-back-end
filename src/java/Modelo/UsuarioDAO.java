@@ -66,12 +66,15 @@ public class UsuarioDAO extends conexion implements CRUD {
     @Override
     public List listar() {
         ArrayList<usuario> list = new ArrayList<>();
+        ArrayList<cargo> lista = new ArrayList<>();
         String sql = "select * from usuario";
+       
         conexion cn = new conexion();
         Connection con;
         PreparedStatement ps;
         ResultSet rs;
         usuario u = new usuario();
+        cargo c=new cargo();
         try {
             con = cn.conectar();
             ps = con.prepareStatement(sql);
@@ -79,9 +82,16 @@ public class UsuarioDAO extends conexion implements CRUD {
            
            while(rs.next()){
            usuario usu = new usuario();
+             cargo ca=new cargo();
+           
            usu.setId_usuario(rs.getInt("IDUSUARIO"));
            usu.setNombreUsuario(rs.getString("NOMBREUSUARIO"));
+        
+           
+          
            list.add(usu);
+         
+        
            
            
            }
@@ -106,7 +116,7 @@ public class UsuarioDAO extends conexion implements CRUD {
         ResultSet rs;
         usuario u = new usuario();
         String sql = "insert into usuario(NOMBREUSUARIO)values('" + usu.getNombreUsuario() + "')";
-
+       
         try {
             con = cn.conectar();
             ps = con.prepareStatement(sql);
@@ -127,4 +137,5 @@ public class UsuarioDAO extends conexion implements CRUD {
     public boolean eliminar(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
 }

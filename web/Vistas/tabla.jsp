@@ -83,7 +83,7 @@
                     <tr>
                         <th>Id</th>
                         <th>Nombre</th>
-                       
+                       <th>Cargo</th>
                         <th>Editar</th>
                         <th>Eliminar</th>
                     </tr>
@@ -104,6 +104,7 @@
                     <tr>
                         <td><%= usu.getId_usuario()  %>  </td>
                         <td><%= usu.getNombreUsuario()  %></td>
+                        <td><%= usu.getCargo()  %></td>
 
                        <td><a href="#"><img src="https://img.icons8.com/material-outlined/24/000000/edit--v1.png"></a></td>
                         <td><a href="#"><img src="https://img.icons8.com/material-outlined/24/000000/delete-forever.png"></a></td>

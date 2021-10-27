@@ -15,7 +15,7 @@ import java.sql.DriverManager;
 public class conexion {
 
     private final String baseDatos="sistemavigilante";
-    private final String servidor = "jdbc:mysql://localhost/" + baseDatos;
+    private final String servidor = "jdbc:mysql://localhost:3306/" + baseDatos;
     private final String usuario = "root";
     private final String clave = "";
 
