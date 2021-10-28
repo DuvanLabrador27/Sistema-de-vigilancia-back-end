@@ -22,12 +22,13 @@ public class Empleado {
     private String telefono;
     private Date fechaNacimiento;
     private usuario idUsuario;
+    private cargo nombreCargo;
 
     public Empleado() {
         
     }
 
-    public Empleado(int id, String nombre, String apellido, String tipoDocumento, String numeroDocumento, String telefono, Date fechaNacimiento, usuario idUsuario) {
+    public Empleado(int id, String nombre, String apellido, String tipoDocumento, String numeroDocumento, String telefono, Date fechaNacimiento, usuario idUsuario, cargo nombreCargo) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -36,6 +37,7 @@ public class Empleado {
         this.telefono = telefono;
         this.fechaNacimiento = fechaNacimiento;
         this.idUsuario = idUsuario;
+        this.nombreCargo = nombreCargo;
     }
 
     public int getId() {
@@ -102,11 +104,20 @@ public class Empleado {
         this.idUsuario = idUsuario;
     }
 
+    public cargo getNombreCargo() {
+        return nombreCargo;
+    }
+
+    public void setNombreCargo(cargo nombreCargo) {
+        this.nombreCargo = nombreCargo;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 29 * hash + this.id;
-        hash = 29 * hash + Objects.hashCode(this.idUsuario);
+        hash = 31 * hash + this.id;
+        hash = 31 * hash + Objects.hashCode(this.idUsuario);
+        hash = 31 * hash + Objects.hashCode(this.nombreCargo);
         return hash;
     }
 
@@ -125,7 +136,7 @@ public class Empleado {
         if (this.id != other.id) {
             return false;
         }
-        if (!Objects.equals(this.idUsuario, other.idUsuario)) {
+        if (!Objects.equals(this.nombreCargo, other.nombreCargo)) {
             return false;
         }
         return true;
@@ -133,8 +144,10 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", tipoDocumento=" + tipoDocumento + ", numeroDocumento=" + numeroDocumento + ", telefono=" + telefono + ", fechaNacimiento=" + fechaNacimiento + ", idUsuario=" + idUsuario + '}';
+        return "Empleado{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", tipoDocumento=" + tipoDocumento + ", numeroDocumento=" + numeroDocumento + ", telefono=" + telefono + ", fechaNacimiento=" + fechaNacimiento + ", idUsuario=" + idUsuario + ", nombreCargo=" + nombreCargo + '}';
     }
+
+    
     
     
     

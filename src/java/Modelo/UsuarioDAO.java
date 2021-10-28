@@ -40,6 +40,7 @@ public class UsuarioDAO extends conexion implements CRUD {
                 usu.setNombreUsuario(user.getNombreUsuario());
                 usu.setCargo(new cargo());
                 usu.getCargo().setNombreCargo(rs.getString("NOMBRECARGO"));
+
                 usu.setEstado(true);
             }
         } catch (Exception e) {
@@ -65,39 +66,39 @@ public class UsuarioDAO extends conexion implements CRUD {
 
     @Override
     public List listar() {
+        System.out.println("Listar // EmpleadoDAO: INICIO ");
         ArrayList<usuario> list = new ArrayList<>();
         ArrayList<cargo> lista = new ArrayList<>();
-        String sql = "select * from usuario";
-       
+        String sql = "select us.IDUSUARIO AS id, us.NOMBREUSUARIO AS nombre, us.CLAVE AS clave, us.ESTADO AS estado, c.NOMBRECARGO AS cargo from usuario AS us INNER JOIN cargo AS c ON us.IDCARGO = c.IDCARGO";
+
         conexion cn = new conexion();
         Connection con;
         PreparedStatement ps;
         ResultSet rs;
         usuario u = new usuario();
-        cargo c=new cargo();
+        cargo c = new cargo();
+
         try {
             con = cn.conectar();
             ps = con.prepareStatement(sql);
-           rs= ps.executeQuery();
-           
-           while(rs.next()){
-           usuario usu = new usuario();
-             cargo ca=new cargo();
-           
-           usu.setId_usuario(rs.getInt("IDUSUARIO"));
-           usu.setNombreUsuario(rs.getString("NOMBREUSUARIO"));
-        
-           
-          
-           list.add(usu);
-         
-        
-           
-           
-           }
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                usuario usu = new usuario();
+                cargo ca = new cargo();
+                usu.setId_usuario(rs.getInt("id"));
+                usu.setNombreUsuario(rs.getString("nombre"));
+                usu.setClave(rs.getString("clave"));
+                usu.setEstado(rs.getBoolean("estado"));
+                ca.setNombreCargo(rs.getString("cargo"));
+                usu.setCargo(ca);
+
+                list.add(usu);
+
+            }
 
         } catch (Exception e) {
-
+            System.out.println("Listar // EmpleadoDAO: ERROR " + e.getMessage());
         }
         return list;
     }
@@ -115,15 +116,15 @@ public class UsuarioDAO extends conexion implements CRUD {
         PreparedStatement ps;
         ResultSet rs;
         usuario u = new usuario();
-        String sql = "insert into usuario(NOMBREUSUARIO)values('" + usu.getNombreUsuario() + "')";
-       
+        String sql = "insert into usuario(NOMBREUSUARIO,IDCARGO,CLAVE)values('" + usu.getNombreUsuario() + "', '" + usu.getCargo().getIdCargo() + "', '" + usu.getClave() + "')";
+
         try {
             con = cn.conectar();
             ps = con.prepareStatement(sql);
             ps.executeUpdate();
 
         } catch (Exception e) {
-
+            System.out.println("Listar // EmpleadoDAO: ERROR " + e.getMessage());
         }
         return false;
     }
@@ -136,6 +137,40 @@ public class UsuarioDAO extends conexion implements CRUD {
     @Override
     public boolean eliminar(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List listarCargo() {
+        System.out.println("Listar // UsuarioDAO: INICIO ");
+
+        ArrayList<cargo> lista = new ArrayList<>();
+        String sql = "select * from cargo";
+
+        conexion cn = new conexion();
+        Connection con;
+        PreparedStatement ps;
+        ResultSet rs;
+
+        try {
+            con = cn.conectar();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                cargo ca = new cargo();
+                ca.setIdCargo(Integer.parseInt(rs.getString("IDCARGO")));
+                ca.setNombreCargo(rs.getString("NOMBRECARGO"));
+                
+
+                lista.add(ca);
+
+            }
+
+        } catch (Exception e) {
+            System.out.println("ListarCargo // UsuarioDAO: ERROR " + e.getMessage());
+        }
+        return lista;
     }
 
 }

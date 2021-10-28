@@ -47,7 +47,7 @@
                     <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
                        
                         <a href="./srvPerfil?accion=perfil" id="admin-tabla"><ion-icon name="contact"></ion-icon> Perfil</a>
-                      
+                     <!--  <a href="./srvEmpleadoVigilante?accion=formularioE" ><ion-icon name="document"></ion-icon>Formulario Perfil</a>-->
                         <a href="formulario_Puesto.html"><ion-icon name="add-circle"></ion-icon> Agregar observación de puesto</a>
 
                         <a href="formulario_visitante.html" id="visitante"><ion-icon name="add-circle"></ion-icon> Agregar observación de visitante</a>

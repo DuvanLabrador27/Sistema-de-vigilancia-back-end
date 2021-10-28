@@ -5,10 +5,12 @@
  */
 package Controlador;
 
+import Modelo.Empleado;
+import Modelo.EmpleadoDAO;
 import Modelo.UsuarioDAO;
 import Modelo.usuario;
 import java.io.IOException;
-import java.io.PrintWriter;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,14 +22,15 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author duvan
  */
-@WebServlet(name = "srvPerfil", urlPatterns = {"/srvPerfil"})
-public class srvPerfil extends HttpServlet {
- String perfilVigilante="Vistas/perfilVigilante.jsp";
- String perfilAdmin="Vistas/perfilAdministrador.jsp";
+@WebServlet(name = "srvEmpleadoVigilante", urlPatterns = {"/srvEmpleadoVigilante"})
+public class srvEmpleadoVigilante extends HttpServlet {
+   String formularioE="Vistas/formulario_empleado.jsp";
+ 
 String volverVigilante = "Vistas/vigilante.jsp";
 String volverAdmin = "Vistas/admin.jsp";
-    usuario  usu =new usuario();
-   UsuarioDAO u=new UsuarioDAO();
+    Empleado  emp =new Empleado();
+   EmpleadoDAO e=new  EmpleadoDAO();
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -40,22 +43,23 @@ String volverAdmin = "Vistas/admin.jsp";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-      String  acceso="";
-        String acction=request.getParameter("accion");
-        if(acction.equalsIgnoreCase("perfil")){
-            acceso=perfilVigilante;
-        }else if(acction.equalsIgnoreCase("perfilAdmin")){
+        String  acceso="";
+        String action=request.getParameter("accion");
+        if(action.equalsIgnoreCase("formularioE")){
+            acceso=formularioE;
+        }else if(action.equalsIgnoreCase("formularioA")){
         
-            acceso=perfilAdmin;
-        }else if(acction.equalsIgnoreCase("volver")){
+            
+        }else if(action.equalsIgnoreCase("volver")){
         
             acceso=volverVigilante;
-        }else if(acction.equalsIgnoreCase("volverAdmin")){
+        }else if(action.equalsIgnoreCase("volverAdmin")){
         
             acceso=volverAdmin;
         }
           RequestDispatcher vista=request.getRequestDispatcher(acceso);
         vista.forward(request, response);
+    
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

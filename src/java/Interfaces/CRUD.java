@@ -5,7 +5,7 @@
  */
 package Interfaces;
 
-import Modelo.cargo;
+
 import Modelo.usuario;
 import java.util.List;
 
@@ -17,6 +17,8 @@ public interface CRUD {
     
     public List listar();
     public usuario list(int id);
+    public List listarCargo();
+   
     public boolean add(usuario usu);
     public boolean edit(usuario usu);
     public boolean eliminar(int id);

@@ -6,6 +6,7 @@
 package Controlador;
 
 import Modelo.UsuarioDAO;
+import Modelo.cargo;
 import Modelo.usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -53,8 +54,18 @@ String volverAdmin = "Vistas/admin.jsp";
         }else if(action.equalsIgnoreCase("add")){
         acceso=add;
         }else if(action.equalsIgnoreCase("Agregar")){
+            cargo c =new cargo();
          String nombre =  request.getParameter("txt_nombre");
          usu.setNombreUsuario(nombre);
+         String clave = request.getParameter("txt_clave");
+         usu.setClave(clave);
+         String cargo = request.getParameter("cargo");
+         c.setIdCargo(Integer.parseInt(cargo));
+         
+         String estado = request.getParameter("estado");
+         usu.setEstado(Boolean.parseBoolean(estado));
+         usu.setCargo(c);
+         
          u.add(usu);
          acceso=listar;
         }else if(action.equalsIgnoreCase("volver")){

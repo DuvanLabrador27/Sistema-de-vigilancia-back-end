@@ -54,7 +54,7 @@
             <div class="row">
                 <div class="barra-lateral col-12 col-sm-auto ">
                     <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
-                        <a href="#" id="admin-tabla"><ion-icon name="contact"></ion-icon> Perfil</a>
+                        <a href="./srvPerfil?accion=perfilAdmin" id="admin-tabla"><ion-icon name="contact"></ion-icon> Perfil</a>
                         <a href="./srvPersonal?accion=add"><ion-icon name="add-circle"></ion-icon> Agregar Personal</a>
                         <a href="./srvPersonal?accion=listar"><ion-icon name="contact"></ion-icon> Consultar personal</a>
 

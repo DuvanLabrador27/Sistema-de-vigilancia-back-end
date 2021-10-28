@@ -16,19 +16,20 @@ public class usuario {
     private String clave;
     private boolean estado;
     private cargo cargo;
-    private cargoEnum cargoEnum;
+    private Empleado empleado;
+  
 
     public usuario() {
         
     }
 
-    public usuario(int id_usuario, String nombreUsuario, String clave, boolean estado, cargo cargo, cargoEnum cargoEnum) {
+    public usuario(int id_usuario, String nombreUsuario, String clave, boolean estado, cargo cargo, Empleado empleado) {
         this.id_usuario = id_usuario;
         this.nombreUsuario = nombreUsuario;
         this.clave = clave;
         this.estado = estado;
         this.cargo = cargo;
-        this.cargoEnum = cargoEnum;
+        this.empleado= empleado;
     }
     
     
@@ -74,15 +75,15 @@ public class usuario {
         this.cargo = cargo;
     }
 
-    public cargoEnum getCargoEnum() {
-        return cargoEnum;
+    public Empleado getEmpleado() {
+        return empleado;
     }
 
-    public void setCargoEnum(cargoEnum cargoEnum) {
-        this.cargoEnum = cargoEnum;
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
-    
-    
+
+ 
     
     
     
