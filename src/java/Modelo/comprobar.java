@@ -5,21 +5,20 @@
  */
 package Modelo;
 
+import java.net.URISyntaxException;
+import java.sql.SQLException;
+
 /**
  *
  * @author duvan
  */
 public class comprobar {
-    
-    public static void main(String[] args) {
-        conexion c =new conexion();
-        if(c.conectar() !=null){
-        
-            System.out.println("La conexion es correcta");
-        
+    public static void main(String[] args){
+        conexion c = new conexion();
+        if(c.conectar()!= null){
+            System.out.println("conexion es correcta");
         }else{
-            System.out.println("Conexion incorrecta");
+            System.out.println("conexion erronea");
         }
     }
-    
 }

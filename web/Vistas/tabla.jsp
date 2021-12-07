@@ -24,12 +24,12 @@
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"
-  />
+  >
     <link rel="stylesheet" href="./css/tabla-personal.css">
   <link
     rel="stylesheet"
     href=" https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css"
-  />
+  >
     </head>
     <body>
         
@@ -75,7 +75,7 @@
                             
                         
        <table
-                id="tabla"
+                id="tabla-22"
                 class="table table-striped table-bordered"
                 style="width: 100%"
               >
@@ -106,8 +106,8 @@
                         <td><%= usu.getNombreUsuario()  %></td>
                         <td><%= usu.getCargo().getNombreCargo()  %></td>
 
-                       <td><a href="#"><img src="https://img.icons8.com/material-outlined/24/000000/edit--v1.png"></a></td>
-                        <td><a href="#"><img src="https://img.icons8.com/material-outlined/24/000000/delete-forever.png"></a></td>
+                       <td><a href="./srvPersonal?accion=editar&id=<%=usu.getId_usuario()%>"><img src="https://img.icons8.com/material-outlined/24/000000/edit--v1.png"></a></td>
+                        <td><a href="./srvPersonal?accion=eliminar&id=<%=usu.getId_usuario()%>"><img src="https://img.icons8.com/material-outlined/24/000000/delete-forever.png"></a></td>
                         
                     </tr>
                     <% 
@@ -126,6 +126,7 @@
               src="https://code.jquery.com/jquery-3.6.0.js"
               integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
               crossorigin="anonymous"></script>
+     
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
@@ -134,9 +135,9 @@
     <script src="https://kit.fontawesome.com/646c794df3.js"></script>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script>
-      $(document).ready(function () {
-        $("#tabla").DataTable();
-      });
+   $(document).ready(function() {
+    $('#tabla-22').DataTable();
+} );
     </script>
     </body>
 </html>

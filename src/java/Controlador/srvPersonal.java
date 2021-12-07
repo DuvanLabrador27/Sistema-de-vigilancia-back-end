@@ -24,14 +24,14 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name = "srvPersonal", urlPatterns = {"/srvPersonal"})
 public class srvPersonal extends HttpServlet {
-String listar="Vistas/tabla.jsp";
-String add="Vistas/formulario_personal.jsp";
-String volverAdmin = "Vistas/admin.jsp";
-    usuario  usu =new usuario();
-   UsuarioDAO u=new UsuarioDAO();
 
- 
-
+    String listar = "Vistas/tabla.jsp";
+    String add = "Vistas/formulario_personal.jsp";
+    String volverAdmin = "Vistas/admin.jsp";
+    String edit = "Vistas/formulario_personal_edit.jsp";
+    int id;
+    usuario usu = new usuario();
+    UsuarioDAO u = new UsuarioDAO();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -45,36 +45,63 @@ String volverAdmin = "Vistas/admin.jsp";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        
-        String acceso="";
-        String action=request.getParameter("accion");
-        if(action.equalsIgnoreCase("listar")){
-        acceso=listar;
-        }else if(action.equalsIgnoreCase("add")){
-        acceso=add;
-        }else if(action.equalsIgnoreCase("Agregar")){
-            cargo c =new cargo();
-         String nombre =  request.getParameter("txt_nombre");
-         usu.setNombreUsuario(nombre);
-         String clave = request.getParameter("txt_clave");
-         usu.setClave(clave);
-         String cargo = request.getParameter("cargo");
-         c.setIdCargo(Integer.parseInt(cargo));
-         
-         String estado = request.getParameter("estado");
-         usu.setEstado(Boolean.parseBoolean(estado));
-         usu.setCargo(c);
-         
-         u.add(usu);
-         acceso=listar;
-        }else if(action.equalsIgnoreCase("volver")){
-        
-            acceso=volverAdmin;
+
+        String acceso = "";
+        String action = request.getParameter("accion");
+        if (action.equalsIgnoreCase("listar")) {
+            acceso = listar;
+        } else if (action.equalsIgnoreCase("add")) {
+            acceso = add;
+        } else if (action.equalsIgnoreCase("Agregar")) {
+            cargo c = new cargo();
+            String nombre = request.getParameter("txt_nombre");
+            usu.setNombreUsuario(nombre);
+            String clave = request.getParameter("txt_clave");
+            usu.setClave(clave);
+            String cargo = request.getParameter("cargo");
+            c.setIdCargo(Integer.parseInt(cargo));
+
+            String estado = request.getParameter("estado");
+            usu.setEstado(Boolean.parseBoolean(estado));
+            usu.setCargo(c);
+
+            u.add(usu);
+            acceso = listar;
+        } else if (action.equalsIgnoreCase("volver")) {
+
+            acceso = volverAdmin;
+        } else if (action.equalsIgnoreCase("editar")) {
+
+            request.setAttribute("ideper", request.getParameter("id"));
+            acceso = edit;
+        } else if (action.equalsIgnoreCase("Actualizar")) {
+
+            cargo c = new cargo();
+            id = Integer.parseInt(request.getParameter("txt_id"));
+            usu.setId_usuario(id);
+            
+            String nombre=request.getParameter("txt_nombre");
+            usu.setNombreUsuario(nombre);
+            
+            String clave = request.getParameter("txt_clave");
+            usu.setClave(clave);
+            
+            String cargo = request.getParameter("cargo");
+            
+            c.setIdCargo(Integer.parseInt(cargo));
+            usu.setCargo(c);
+            u.edit(usu);
+            acceso = listar;
+
+        } else if (action.equalsIgnoreCase("eliminar")) {
+             id = Integer.parseInt(request.getParameter("id"));
+             usu.setId_usuario(id);
+            u.eliminar(id);
+            acceso=listar;
+
         }
-        RequestDispatcher vista=request.getRequestDispatcher(acceso);
+        RequestDispatcher vista = request.getRequestDispatcher(acceso);
         vista.forward(request, response);
-    
 
     }
 
@@ -104,8 +131,9 @@ String volverAdmin = "Vistas/admin.jsp";
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         processRequest(request, response);
+        processRequest(request, response);
     }
+
     /**
      * Returns a short description of the servlet.
      *
@@ -117,7 +145,3 @@ String volverAdmin = "Vistas/admin.jsp";
     }// </editor-fold>
 
 }
-
-
-
-    

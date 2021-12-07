@@ -18,7 +18,8 @@ import java.util.List;
  * @author duvan
  */
 public class UsuarioDAO extends conexion implements CRUD {
-
+                usuario usu = new usuario();
+                cargo ca = new cargo();
     public usuario identificar(usuario user) throws Exception {
         usuario usu = null;
         conexion con;
@@ -66,7 +67,7 @@ public class UsuarioDAO extends conexion implements CRUD {
 
     @Override
     public List listar() {
-        System.out.println("Listar // EmpleadoDAO: INICIO ");
+        System.out.println("Listar // UsuarioDAO: INICIO ");
         ArrayList<usuario> list = new ArrayList<>();
         ArrayList<cargo> lista = new ArrayList<>();
         String sql = "select us.IDUSUARIO AS id, us.NOMBREUSUARIO AS nombre, us.CLAVE AS clave, us.ESTADO AS estado, c.NOMBRECARGO AS cargo from usuario AS us INNER JOIN cargo AS c ON us.IDCARGO = c.IDCARGO";
@@ -98,14 +99,40 @@ public class UsuarioDAO extends conexion implements CRUD {
             }
 
         } catch (Exception e) {
-            System.out.println("Listar // EmpleadoDAO: ERROR " + e.getMessage());
+            System.out.println("Listar // UsuarioDAO: ERROR " + e.getMessage());
         }
         return list;
     }
 
     @Override
     public Modelo.usuario list(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         String sql = "select * from usuario where IDUSUARIO=" + id;
+         
+
+        conexion cn = new conexion();
+        Connection con;
+        PreparedStatement ps;
+        ResultSet rs;
+        
+
+        try {
+            con = cn.conectar();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+               
+              usu.setId_usuario(rs.getInt("IDUSUARIO"));
+              
+
+                
+
+            }
+
+        } catch (Exception e) {
+            System.out.println("Listar POR ID // USUARIODAO: ERROR " + e.getMessage());
+        }
+        return usu;
     }
 
     @Override
@@ -124,24 +151,50 @@ public class UsuarioDAO extends conexion implements CRUD {
             ps.executeUpdate();
 
         } catch (Exception e) {
-            System.out.println("Listar // EmpleadoDAO: ERROR " + e.getMessage());
+            System.out.println("AGREGAR // USUARIODAO: ERROR " + e.getMessage());
         }
         return false;
     }
 
     @Override
-    public boolean edit(Modelo.usuario usu) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean edit(Modelo.usuario usu)  {
+        conexion cn = new conexion();
+        Connection con;
+        PreparedStatement ps;
+      
+        String sql = "update usuario set NOMBREUSUARIO = '" + usu.getNombreUsuario() +  "',CLAVE = '" + usu.getClave() +  "',IDCARGO = '" + usu.getCargo().getIdCargo() +  "'where IDUSUARIO = " + usu.getId_usuario();
+    try {
+            con = cn.conectar();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            System.out.println("Editar // UsuarioDAO: ERROR " + e.getMessage());
+        }
+    return false;
     }
 
     @Override
     public boolean eliminar(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        conexion cn = new conexion();
+        Connection con;
+        PreparedStatement ps;
+       
+        String sql = "delete from usuario where IDUSUARIO=" +  id;
+        try {
+            con = cn.conectar();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            System.out.println("Eliminar // UsuarioDAO: ERROR " + e.getMessage());
+        }
+    return false;
     }
 
     @Override
     public List listarCargo() {
-        System.out.println("Listar // UsuarioDAO: INICIO ");
+        System.out.println("Listar CARGO // UsuarioDAO: INICIO ");
 
         ArrayList<cargo> lista = new ArrayList<>();
         String sql = "select * from cargo";
