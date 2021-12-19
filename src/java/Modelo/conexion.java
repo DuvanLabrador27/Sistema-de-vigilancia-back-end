@@ -15,26 +15,23 @@ import java.sql.DriverManager;
 
 
 public class conexion {
-
-    private final String baseDatos = "sistemavigilante";
-    private final String servidor = "jdbc:mysql://localhost:3306/" + baseDatos;
-    private final String usuario = "root";
-    private final String clave = "";
-
-    public Connection conectar() {
+    private final String baseDatos = "for4zw6i50k1buhy";
+    private final String servidor = "jdbc:mysql://l6glqt8gsx37y4hs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com/" + baseDatos;
+    private final String usuario = "jyajz8mjifo3alob";
+    private final String clave = "iknemvxu27hoq8io";
+    
+    public Connection conectar(){
         Connection cn = null;
-        
         try{
-    
-        Class.forName("com.mysql.cj.jdbc.Driver");
-       cn = (Connection) DriverManager.getConnection(servidor, usuario, clave);
-        
-    }catch(Exception e){
-    
-    System.out.println("Error al conectar" + e.getMessage());
-    }
+            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            cn = DriverManager.getConnection(servidor, usuario, clave);
+        }catch(Exception e){
+            System.out.println("Error al conectar" + e.getMessage());
+        }
         return cn;
     }
+            
 }
 
 
@@ -62,3 +59,31 @@ public class conexion {
 }
 
 **/
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+/*
+public class conexion {
+
+    private final String baseDatos = "sistemavigilante";
+    private final String servidor = "jdbc:mysql://localhost:3306/" + baseDatos;
+    private final String usuario = "root";
+    private final String clave = "";
+
+    public Connection conectar() {
+        Connection cn = null;
+        
+        try{
+    
+        Class.forName("com.mysql.cj.jdbc.Driver");
+       cn = (Connection) DriverManager.getConnection(servidor, usuario, clave);
+        
+    }catch(Exception e){
+    
+    System.out.println("Error al conectar" + e.getMessage());
+    }
+        return cn;
+    }
+}
+*/
