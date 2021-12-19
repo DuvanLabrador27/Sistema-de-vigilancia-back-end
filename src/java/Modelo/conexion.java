@@ -15,10 +15,10 @@ import java.sql.DriverManager;
 
 
 public class conexion {
-    private final String baseDatos = "for4zw6i50k1buhy";
-    private final String servidor = "jdbc:mysql://l6glqt8gsx37y4hs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com/" + baseDatos;
-    private final String usuario = "jyajz8mjifo3alob";
-    private final String clave = "iknemvxu27hoq8io";
+    private final String baseDatos = "on6c7i7jsggic4xs";
+    private final String servidor = "jdbc:mysql://l6glqt8gsx37y4hs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/" + baseDatos;
+    private final String usuario = "cn6na8rs9jme2rka";
+    private final String clave = "x9totyacho7ihoan";
     
     public Connection conectar(){
         Connection cn = null;
@@ -33,7 +33,6 @@ public class conexion {
     }
             
 }
-
 
 //Conexión a base de datos con deploy en heroku
 
